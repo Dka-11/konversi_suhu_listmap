@@ -25,6 +25,7 @@ class MyApp extends StatelessWidget {
         body: Container(
           margin: const EdgeInsets.all(8),
           child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: const [
               FormSuhu(),
               TextSuhu(),

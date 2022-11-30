@@ -11,24 +11,36 @@ class TextSuhu extends StatelessWidget {
         Column(
           children: const [
             Text(
-              'Text 1',
-              style: TextStyle(fontSize: 30),
+              'Suhu dalam Kelvin',
+              style: TextStyle(fontSize: 15),
+            ),
+            SizedBox(
+              height: 10,
             ),
             Text(
-              'Text 2',
-              style: TextStyle(fontSize: 15),
+              '0',
+              style: TextStyle(
+                fontSize: 30,
+                fontWeight: FontWeight.bold,
+              ),
             )
           ],
         ),
         Column(
           children: const [
             Text(
-              'Text 3',
-              style: TextStyle(fontSize: 30),
+              'Suhu dalam Reamor',
+              style: TextStyle(fontSize: 15),
+            ),
+            SizedBox(
+              height: 10,
             ),
             Text(
-              'Text 4',
-              style: TextStyle(fontSize: 15),
+              '0',
+              style: TextStyle(
+                fontSize: 30,
+                fontWeight: FontWeight.bold,
+              ),
             )
           ],
         )
