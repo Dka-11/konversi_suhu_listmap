@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:konversi_suhu/widgets/button_suhu.dart';
 import 'package:konversi_suhu/widgets/form_suhu.dart';
 import 'package:konversi_suhu/widgets/text_suhu.dart';
 
@@ -27,6 +28,7 @@ class MyApp extends StatelessWidget {
             children: const [
               FormSuhu(),
               TextSuhu(),
+              ButtonSuhu(),
             ],
           ),
         ),
