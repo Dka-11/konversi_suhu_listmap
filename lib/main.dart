@@ -5,8 +5,17 @@ import 'package:konversi_suhu/widgets/text_suhu.dart';
 
 void main() => runApp(const MyApp());
 
-class MyApp extends StatelessWidget {
+class MyApp extends StatefulWidget {
   const MyApp({super.key});
+
+  @override
+  State<MyApp> createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+  double _inputUser = 0;
+  double _kelvin = 0;
+  double _reamor = 0;
 
   @override
   Widget build(BuildContext context) {
