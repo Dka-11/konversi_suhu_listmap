@@ -13,6 +13,9 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
+  // Digunakan untuk "Retrieve Current Value Input"
+  TextEditingController suhuInput = TextEditingController();
+  // Var
   double _inputUser = 0;
   double _kelvin = 0;
   double _reamor = 0;
@@ -33,8 +36,11 @@ class _MyAppState extends State<MyApp> {
           margin: const EdgeInsets.all(8),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: const [
-              FormSuhu(),
+            children: [
+              // Classes from diff files.
+              FormSuhu(
+                nilaiCelcius: suhuInput,
+              ),
               TextSuhu(),
               ButtonSuhu(),
             ],
