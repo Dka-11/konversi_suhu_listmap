@@ -27,6 +27,14 @@ class _MyAppState extends State<MyApp> {
     super.dispose();
   }
 
+  konversiSuhu() {
+    setState(() {
+      _inputUser = double.parse(suhuInput.text);
+      _kelvin = 273 + _inputUser;
+      _reamor = (4 / 5) * _inputUser;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
