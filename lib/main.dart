@@ -56,8 +56,13 @@ class _MyAppState extends State<MyApp> {
               FormSuhu(
                 nilaiCelcius: suhuInput,
               ),
-              TextSuhu(),
-              ButtonSuhu(),
+              TextSuhu(
+                hasilKelvin: _kelvin,
+                hasilReamor: _reamor,
+              ),
+              ButtonSuhu(
+                afterClick: konversiSuhu,
+              ),
             ],
           ),
         ),

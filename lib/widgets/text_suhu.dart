@@ -1,7 +1,14 @@
 import 'package:flutter/material.dart';
 
 class TextSuhu extends StatelessWidget {
-  const TextSuhu({super.key});
+  const TextSuhu({
+    super.key,
+    required this.hasilKelvin,
+    required this.hasilReamor,
+  });
+
+  final double hasilKelvin;
+  final double hasilReamor;
 
   @override
   Widget build(BuildContext context) {
@@ -9,17 +16,17 @@ class TextSuhu extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       children: [
         Column(
-          children: const [
-            Text(
+          children: [
+            const Text(
               'Suhu dalam Kelvin',
               style: TextStyle(fontSize: 15),
             ),
-            SizedBox(
+            const SizedBox(
               height: 10,
             ),
             Text(
-              '0',
-              style: TextStyle(
+              hasilKelvin.toStringAsFixed(2),
+              style: const TextStyle(
                 fontSize: 30,
                 fontWeight: FontWeight.bold,
               ),
@@ -27,17 +34,17 @@ class TextSuhu extends StatelessWidget {
           ],
         ),
         Column(
-          children: const [
-            Text(
+          children: [
+            const Text(
               'Suhu dalam Reamor',
               style: TextStyle(fontSize: 15),
             ),
-            SizedBox(
+            const SizedBox(
               height: 10,
             ),
             Text(
-              '0',
-              style: TextStyle(
+              hasilReamor.toStringAsFixed(2),
+              style: const TextStyle(
                 fontSize: 30,
                 fontWeight: FontWeight.bold,
               ),
