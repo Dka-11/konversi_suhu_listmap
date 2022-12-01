@@ -13,5 +13,9 @@ A few resources to get you started if this is your first Flutter project:
 
 For help getting started with Flutter development, view the
 [online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
-# konversi_suhu_flutter
+samples, guidance on mobile development, and a full API reference.  
+
+# Screenshots
+<img src="./images/screenshot-1.png">  
+<hr>
+<img src="./images/screenshot-2.png">
