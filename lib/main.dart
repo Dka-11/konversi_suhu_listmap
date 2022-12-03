@@ -68,7 +68,7 @@ class _MyAppState extends State<MyApp> {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               // Classes from diff files.
-              FormSuhu(
+              InputSuhu(
                 nilaiCelcius: suhuInput,
               ),
               DropdownButton<String>(

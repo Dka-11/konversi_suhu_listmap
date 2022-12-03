@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
-class FormSuhu extends StatelessWidget {
-  const FormSuhu({super.key, required this.nilaiCelcius});
+class InputSuhu extends StatelessWidget {
+  const InputSuhu({super.key, required this.nilaiCelcius});
 
   final TextEditingController nilaiCelcius;
 
