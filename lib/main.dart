@@ -37,6 +37,14 @@ class _MyAppState extends State<MyApp> {
     });
   }
 
+  void dropdownOnChanged(String? changeValue) {
+    // fungsi ? nullable type
+    setState(() {
+      _newValue = changeValue!;
+      // fungsi ! digunakan untuk guarantee that the input won't be null
+    });
+  }
+
   var listItem = [
     "Kelvin",
     "Reamor",
@@ -71,7 +79,7 @@ class _MyAppState extends State<MyApp> {
                   );
                 }).toList(),
                 value: null,
-                onChanged: (String? changeValue) {},
+                onChanged: dropdownOnChanged,
               ),
             ],
           ),
