@@ -19,6 +19,8 @@ class _MyAppState extends State<MyApp> {
   double _inputUser = 0;
   double _kelvin = 0;
   double _reamor = 0;
+  String _newValue = "Kelvin";
+  double _result = 0;
 
   @override
   void dispose() {
@@ -64,7 +66,7 @@ class _MyAppState extends State<MyApp> {
               DropdownButton<String>(
                 items: listItem.map((String value) {
                   return DropdownMenuItem<String>(
-                    value: value,
+                    value: _newValue,
                     child: Text(value),
                   );
                 }).toList(),
