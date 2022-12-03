@@ -32,8 +32,12 @@ class _MyAppState extends State<MyApp> {
   konversiSuhu() {
     setState(() {
       _inputUser = double.parse(suhuInput.text);
-      _kelvin = 273 + _inputUser;
-      _reamor = (4 / 5) * _inputUser;
+
+      if (_newValue == "Kelvin") {
+        _result = 273 + _inputUser;
+      } else {
+        _result = (4 / 5) * _inputUser;
+      }
     });
   }
 
