@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:konversi_suhu/widgets/button_suhu.dart';
-import 'package:konversi_suhu/widgets/form_suhu.dart';
-import 'package:konversi_suhu/widgets/text_suhu.dart';
+import 'package:konversi_suhu/widgets/convert.dart';
+import 'package:konversi_suhu/widgets/input.dart';
+import 'package:konversi_suhu/widgets/result.dart';
 
 void main() => runApp(const MyApp());
 
