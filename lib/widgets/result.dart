@@ -1,57 +1,34 @@
 import 'package:flutter/material.dart';
 
-class TextSuhu extends StatelessWidget {
-  const TextSuhu({
+class Result extends StatelessWidget {
+  const Result({
     super.key,
-    required this.hasilKelvin,
-    required this.hasilReamor,
+    required this.result,
   });
 
-  final double hasilKelvin;
-  final double hasilReamor;
+  final double result;
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-      children: [
-        Column(
-          children: [
-            const Text(
-              'Suhu dalam Kelvin',
-              style: TextStyle(fontSize: 15),
+    return Container(
+      margin: const EdgeInsets.only(top: 20, bottom: 20),
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          const Text(
+            "Hasil",
+            style: TextStyle(
+              fontSize: 20,
             ),
-            const SizedBox(
-              height: 10,
+          ),
+          Text(
+            result.toStringAsFixed(1),
+            style: const TextStyle(
+              fontSize: 30,
             ),
-            Text(
-              hasilKelvin.toStringAsFixed(2),
-              style: const TextStyle(
-                fontSize: 30,
-                fontWeight: FontWeight.bold,
-              ),
-            )
-          ],
-        ),
-        Column(
-          children: [
-            const Text(
-              'Suhu dalam Reamor',
-              style: TextStyle(fontSize: 15),
-            ),
-            const SizedBox(
-              height: 10,
-            ),
-            Text(
-              hasilReamor.toStringAsFixed(2),
-              style: const TextStyle(
-                fontSize: 30,
-                fontWeight: FontWeight.bold,
-              ),
-            )
-          ],
-        )
-      ],
+          )
+        ],
+      ),
     );
   }
 }
