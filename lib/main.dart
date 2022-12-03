@@ -35,6 +35,11 @@ class _MyAppState extends State<MyApp> {
     });
   }
 
+  var listItem = [
+    "Kelvin",
+    "Reamor",
+  ];
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -56,12 +61,15 @@ class _MyAppState extends State<MyApp> {
               FormSuhu(
                 nilaiCelcius: suhuInput,
               ),
-              TextSuhu(
-                hasilKelvin: _kelvin,
-                hasilReamor: _reamor,
-              ),
-              ButtonSuhu(
-                afterClick: konversiSuhu,
+              DropdownButton<String>(
+                items: listItem.map((String value) {
+                  return DropdownMenuItem<String>(
+                    value: value,
+                    child: Text(value),
+                  );
+                }).toList(),
+                value: null,
+                onChanged: (String? changeValue) {},
               ),
             ],
           ),
