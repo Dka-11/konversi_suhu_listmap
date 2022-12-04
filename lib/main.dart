@@ -17,10 +17,10 @@ class _MyAppState extends State<MyApp> {
   TextEditingController suhuInput = TextEditingController();
   // Var
   double _inputUser = 0;
-  double _kelvin = 0;
-  double _reamor = 0;
   String _newValue = "Kelvin";
   double _result = 0;
+  // double _kelvin = 0;
+  // double _reamor = 0;
 
   @override
   void dispose() {
@@ -35,8 +35,10 @@ class _MyAppState extends State<MyApp> {
 
       if (_newValue == "Kelvin") {
         _result = 273 + _inputUser;
+        listViewHistoryItem.add("Kelvin : $_result"); //Add List for History
       } else {
         _result = (4 / 5) * _inputUser;
+        listViewHistoryItem.add("Reamor : $_result");
       }
     });
   }
@@ -55,6 +57,8 @@ class _MyAppState extends State<MyApp> {
     "Kelvin",
     "Reamor",
   ];
+
+  List<String> listViewHistoryItem = <String>[]; //List ini masih kosong
 
   @override
   Widget build(BuildContext context) {
@@ -80,18 +84,39 @@ class _MyAppState extends State<MyApp> {
                 children: [
                   DropdownButton(
                     items: listItem.map((String value) {
+                      // listItem dari variabel diubah menjadi string.
                       return DropdownMenuItem<String>(
                         value: value,
+                        // nilai dari suatu output, nilai akan tampil di debug console
                         child: Text(value),
+                        //sebuah widget yang akan tampil di output
                       );
                     }).toList(),
                     value: _newValue,
+                    // Mengubah output dropdown
                     onChanged: dropdownOnChanged,
+                    // Agar Dropdown dapat di klik memakai widget onChanged
                   ),
                   Result(result: _result),
                 ],
               ),
-              ButtonSuhu(afterClick: konversiSuhu)
+              ButtonSuhu(afterClick: konversiSuhu),
+              Container(
+                  margin: const EdgeInsets.only(top: 30),
+                  child: const Text(
+                    "Riwayat Konversi",
+                    style: TextStyle(fontSize: 20),
+                  )),
+              Expanded(
+                  child: ListView(
+                      children: listViewHistoryItem.map((String value) {
+                return Container(
+                    margin: const EdgeInsets.all(10),
+                    child: Text(
+                      value,
+                      style: const TextStyle(fontSize: 15),
+                    ));
+              }).toList()))
             ],
           ),
         ),
