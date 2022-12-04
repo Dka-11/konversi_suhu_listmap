@@ -46,6 +46,8 @@ class _MyAppState extends State<MyApp> {
     setState(() {
       _newValue = changeValue!;
       // fungsi ! digunakan untuk guarantee that the input won't be null
+      konversiSuhu();
+      // agar nilai suhu dapat convert / berubah secara otomatis
     });
   }
 
