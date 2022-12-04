@@ -69,22 +69,27 @@ class _MyAppState extends State<MyApp> {
         body: Container(
           margin: const EdgeInsets.all(8),
           child: Column(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               // Classes from diff files.
               InputSuhu(
                 nilaiCelcius: suhuInput,
               ),
-              DropdownButton<String>(
-                items: listItem.map((String value) {
-                  return DropdownMenuItem<String>(
+              Column(
+                children: [
+                  DropdownButton(
+                    items: listItem.map((String value) {
+                      return DropdownMenuItem<String>(
+                        value: value,
+                        child: Text(value),
+                      );
+                    }).toList(),
                     value: _newValue,
-                    child: Text(value),
-                  );
-                }).toList(),
-                value: null,
-                onChanged: dropdownOnChanged,
+                    onChanged: dropdownOnChanged,
+                  ),
+                  Result(result: _result),
+                ],
               ),
+              ButtonSuhu(afterClick: konversiSuhu)
             ],
           ),
         ),
