@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:konversi_suhu/widgets/convert.dart';
+import 'package:konversi_suhu/widgets/dropdownconvert.dart';
+import 'package:konversi_suhu/widgets/historyconvert.dart';
 import 'package:konversi_suhu/widgets/input.dart';
 import 'package:konversi_suhu/widgets/result.dart';
 
@@ -80,26 +82,11 @@ class _MyAppState extends State<MyApp> {
               InputSuhu(
                 nilaiCelcius: suhuInput,
               ),
-              Column(
-                children: [
-                  DropdownButton(
-                    items: listItem.map((String value) {
-                      // listItem dari variabel diubah menjadi string.
-                      return DropdownMenuItem<String>(
-                        value: value,
-                        // nilai dari suatu output, nilai akan tampil di debug console
-                        child: Text(value),
-                        //sebuah widget yang akan tampil di output
-                      );
-                    }).toList(),
-                    value: _newValue,
-                    // Mengubah output dropdown
-                    onChanged: dropdownOnChanged,
-                    // Agar Dropdown dapat di klik memakai widget onChanged
-                  ),
-                  Result(result: _result),
-                ],
-              ),
+              DropDownConvert(
+                  listItem: listItem,
+                  newValue: _newValue,
+                  dropDownConvert: dropdownOnChanged),
+              Result(result: _result),
               ButtonSuhu(afterClick: konversiSuhu),
               Container(
                   margin: const EdgeInsets.only(top: 30),
@@ -107,16 +94,7 @@ class _MyAppState extends State<MyApp> {
                     "Riwayat Konversi",
                     style: TextStyle(fontSize: 20),
                   )),
-              Expanded(
-                  child: ListView(
-                      children: listViewHistoryItem.map((String value) {
-                return Container(
-                    margin: const EdgeInsets.all(10),
-                    child: Text(
-                      value,
-                      style: const TextStyle(fontSize: 15),
-                    ));
-              }).toList()))
+              HistoryConvert(listViewHistoryItem: listViewHistoryItem)
             ],
           ),
         ),
