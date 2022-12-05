@@ -66,13 +66,13 @@ class _MyAppState extends State<MyApp> {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Flutter Demo',
+      title: 'Konversi Suhu List Map - Adika Ahmad Hanif Nazhir - 2041720171',
       theme: ThemeData(
           primarySwatch: Colors.blue,
           visualDensity: VisualDensity.adaptivePlatformDensity),
       home: Scaffold(
         appBar: AppBar(
-          title: const Text("Konversi Suhu"),
+          title: const Text("Konversi Suhu - Adika - 2041720171"),
         ),
         body: Container(
           margin: const EdgeInsets.all(8),
