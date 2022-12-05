@@ -1,4 +1,4 @@
-# konversi_suhu
+# Flutter Practice - Temperature Conversion App
 
 A new Flutter project.
 
